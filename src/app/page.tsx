@@ -2,8 +2,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    
+    <div className="bg-white dark:bg-gray-800 text-black dark:text-white">
+      <p>Dies ist ein Beispieltext.</p>
     </div>
   );
 };
