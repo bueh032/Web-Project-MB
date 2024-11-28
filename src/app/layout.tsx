@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar";
-
+import Navbar from "../../components/navbar";
+import React from "react";
 const roboto = Roboto({
   weight: "300",
   subsets: ["latin"],

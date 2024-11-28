@@ -6,7 +6,7 @@ import React from "react";
 
 const Navbar = () =>{
     return (
-    <div className="py-5 bg-gray-500 relative z-10 w-full">
+    <div className=" bg-gray-500 relative w-full">
         <button title="Test"></button>
     </div>
 )};
