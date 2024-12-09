@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
+import { Ubuntu, Ubuntu_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../../components/navbar";
 import React from "react";
-const roboto = Roboto({
+import Board from "../../components/board";
+
+const ubuntu = Ubuntu({
   weight: "300",
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-Ubuntu",
 });
-const roboto_Mono = Roboto_Mono({
+const ubuntu_Mono = Ubuntu_Mono({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-roboto-mono",
+  variable: "--font-Ubuntu_Mono",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" >
       <body
-        className={`${roboto.variable} ${roboto_Mono.variable} antialiased bg-white `}>
+        className={`${ubuntu.variable} ${ubuntu_Mono.variable} antialiased bg-slate-500 `}>
           <Navbar />
+          <Board />
+          
         {children}
       </body>
     </html>
