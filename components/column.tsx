@@ -1,6 +1,7 @@
 import { ITask } from "../Types/types";
 import { useState } from "react";
 import { Droppable,Draggable } from "@hello-pangea/dnd"; 
+import {LuDot} from "react-icons/lu"
 
 
 interface ColumnProps {
@@ -15,21 +16,28 @@ const Column: React.FC<ColumnProps> =  ({
     droppableId,
 }) => {
     return (
-    <div className="flex">
+    <div className="flex-1">
         <div className="flex gap-1 text-white">
-            <h2 className=" text-sm">
+            <h2 className="  text-2xl font-mono">
                 {title}
+                <LuDot/>
             </h2>
             
         </div>
-    <Droppable droppableId={droppableId}>
+        
+        <Droppable droppableId={droppableId}>
         {(provided)=>(
-            <div
+            <div {...provided.droppableProps}
+            ref={provided.innerRef}
+            className="bg-slate-700 rounded-lg p-5">
+                
+            </div>
         )}
-    </Droppable>
-    
+        </Droppable>
+        
     </div>
-    )
-}
+    
+    );
+};
 
 export default Column

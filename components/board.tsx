@@ -41,7 +41,7 @@ const Board = () => {
       <h1 className="font-bold text-center mb-10 text-xl ">Kanban</h1>
       <DragDropContext>
         <div className="grid md:grid-cols-3 max-md:items-center w-[90%]  mx-auto md: gap-5 ">
-        <Column title=" ToDo" />
+        <Column title=" ToDo" droppableId=""/>
         <Column title="Doing"/>
         <Column title="Done"/>
         </div>
