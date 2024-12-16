@@ -3,7 +3,7 @@ import axios from "axios";
 import { DropResult, DragDropContext } from "@hello-pangea/dnd";
 import { useEffect, useState } from "react";
 import React from "react";
-import { ITask, IBoard } from "../Types/types";
+import { ITask, } from "../Types/types";
 import Column from "./column";
 
 const onDragEnd = (result: DropResult) => {
@@ -31,6 +31,7 @@ const onDragEnd = (result: DropResult) => {
     case "done":
       updatedStatus = "DONE";
       break;
+      default: updatedStatus = draggedTask.status;
   }
 };
 
@@ -39,10 +40,10 @@ const Board = () => {
     <div className="bg-gray-300 py-10 relative h-screen font-mono">
       <h1 className="font-bold text-center mb-10 text-xl ">Kanban</h1>
       <DragDropContext>
-        <div className="grid md:grid-cols-3 max-md:items-center w-[90%] max-w-[1500px] mx-auto md: gap-5 ">
-        <Column />
-        <Column />
-        <Column />
+        <div className="grid md:grid-cols-3 max-md:items-center w-[90%]  mx-auto md: gap-5 ">
+        <Column title=" ToDo" />
+        <Column title="Doing"/>
+        <Column title="Done"/>
         </div>
       </DragDropContext>
     </div>

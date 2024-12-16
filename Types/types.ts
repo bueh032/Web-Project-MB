@@ -5,8 +5,3 @@ export interface ITask {
     status:string;
 }
 
-export interface IBoard {
-    tasks: ITask[];
-    id: string;
-    name: string
-}
